@@ -14,6 +14,7 @@ function writePassword() {
 }
 
 function generatePassword(){
+  //Most Var calls
   var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   var special = ['!','@','#','$','%','^','&','*','(',')'];
@@ -21,6 +22,9 @@ function generatePassword(){
   var final = [];
   var connect;
 
+
+  //Questioning user
+  //Length of password
   var long = window.prompt("How long do you want your password? Enter a number between 8-128!");
   if(!isNaN(long) && long > 7 && long < 129){
     window.alert("Ok! Your password will have "+ long +" characters!");
@@ -31,7 +35,7 @@ function generatePassword(){
     window.alert("Please enter a number!");
     generatePassword();
   }
-
+//Lowercase
   var l = window.confirm("Do you want lowercase letters in your password?");
   if(l){
     window.alert("Okay! Lowercase Letters will be added!");
@@ -39,7 +43,7 @@ function generatePassword(){
   }else{
     window.alert("It will not be added!")
   }
-
+//Uppercase
   var u = window.confirm("Do you want uppercase letters in your password?");
   if(u){
     window.alert("Okay! Uppercase Letters will be added!");
@@ -47,7 +51,7 @@ function generatePassword(){
   }else{
     window.alert("It will not be added!")
   }
-
+//Special Characters
   var s = window.confirm("Do you want special characters in your password?");
   if(s){
     window.alert("Okay! Special characters will be added!");
@@ -55,7 +59,7 @@ function generatePassword(){
   }else{
     window.alert("It will not be added!")
   }
-
+//Numbers
   var n = window.confirm("Do you want numbers in your password?");
   if(n){
     window.alert("Okay! Numbers will be added!");
@@ -63,8 +67,8 @@ function generatePassword(){
   }else{
     window.alert("It will not be added!")
   }
+  //For Loop and Random Generator
   var rando = final.length;
-
   for(var i = 0; i<long; i++){
     var num = Math.floor(Math.random()*rando);
     connect += final[num];
